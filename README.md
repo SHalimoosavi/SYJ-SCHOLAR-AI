@@ -1,345 +1,230 @@
-<div align="center">
+<div align="center">🚀 SYJ Scholar AI
 
-```
- ███████╗██╗   ██╗     ██╗    ███████╗ ██████╗██╗  ██╗ ██████╗ ██╗      █████╗ ██████╗
- ██╔════╝╚██╗ ██╔╝     ██║    ██╔════╝██╔════╝██║  ██║██╔═══██╗██║     ██╔══██╗██╔══██╗
- ███████╗ ╚████╔╝      ██║    ███████╗██║     ███████║██║   ██║██║     ███████║██████╔╝
- ╚════██║  ╚██╔╝  ██   ██║    ╚════██║██║     ██╔══██║██║   ██║██║     ██╔══██║██╔══██╗
- ███████║   ██║   ╚█████╔╝    ███████║╚██████╗██║  ██║╚██████╔╝███████╗██║  ██║██║  ██║
- ╚══════╝   ╚═╝    ╚════╝     ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
-```
+Your Offline AI Study Companion
 
-**Your Offline AI Study Companion**
+Author & Lead Developer: Syed Ali Hasan Moosavi
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://python.org)
-[![Termux Ready](https://img.shields.io/badge/Termux-Ready-orange.svg)](https://termux.dev)
-[![Offline First](https://img.shields.io/badge/offline-first-purple.svg)](#)
-[![GitHub Stars](https://img.shields.io/github/stars/SHalimoosavi/SYJ-SCHOLAR-AI?style=social)](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI)
+🌐 GitHub: https://github.com/SHalimoosavi
 
-*Free · Open-Source · Offline · Mobile-First*
+""License: MIT" (https://img.shields.io/badge/License-MIT-green.svg)" (LICENSE)
+""Python" (https://img.shields.io/badge/Python-3.9+-blue.svg)" (https://python.org)
+""Termux" (https://img.shields.io/badge/Termux-Ready-orange.svg)" (https://termux.dev)
+""Offline First" (https://img.shields.io/badge/Offline-First-purple.svg)" (#)
 
-</div>
+Free • Open Source • Offline • Mobile First
 
----
+</div>---
 
-## 🎯 What is SYJ Scholar AI?
+🎯 Vision
 
-SYJ Scholar AI transforms any PDF into a complete study package — summaries, notes, flashcards, quizzes, and exam prep — all powered by **free, open-source AI** running entirely on your Android phone through **Termux**. No subscriptions. No internet required after setup. No data leaves your device.
+SYJ Scholar AI is an open-source educational AI platform designed to empower students with offline AI capabilities directly on Android through Termux.
 
----
+The project converts PDFs into:
 
-## 😩 The Problem
+- 📚 Study Notes
+- 📝 Summaries
+- 🎴 Flashcards
+- ❓ Quizzes
+- 🎯 Exam Preparation Kits
+- 📖 Revision Sheets
 
-| Challenge | How Scholar AI Solves It |
-|-----------|--------------------------|
-| Too many PDFs, no time | Instant summaries & key concept extraction |
-| Expensive AI subscriptions | 100% free & open-source forever |
-| Poor internet connectivity | Works fully offline after model download |
-| Multiple apps for notes/cards/quizzes | One tool does everything |
-| Mobile students without laptops | Built for Android + Termux |
-| Exam prep is hard | AI generates likely questions & checklists |
+No subscriptions. No vendor lock-in. No cloud dependency after setup.
 
 ---
 
-## ⚡ Quick Start
+✨ Key Features
 
-### One-Line Install (Termux & Linux)
+PDF Summarization
 
-```bash
+scholar summarize file.pdf
+
+Generate:
+
+- Executive Summary
+- Chapter Summaries
+- Key Concepts
+- Definitions
+- Quick Revision Notes
+
+---
+
+Notes Generation
+
+scholar notes file.pdf
+
+Generate structured academic notes automatically.
+
+---
+
+Flashcards
+
+scholar flashcards file.pdf
+
+Generate:
+
+- Question/Answer Flashcards
+- Markdown Export
+- JSON Export
+
+---
+
+Quiz Generator
+
+scholar quiz file.pdf
+
+Generate:
+
+- MCQs
+- True/False Questions
+- Short Questions
+- Long Questions
+
+---
+
+Exam Mode
+
+scholar exam file.pdf
+
+Generate:
+
+- High Priority Topics
+- Important Definitions
+- Revision Checklist
+- Likely Exam Questions
+
+---
+
+🧠 AI Models Supported
+
+Ollama Models
+
+- Gemma
+- Phi
+- Qwen
+- TinyLlama
+
+Future Support
+
+- Hugging Face Open Models
+- Local GGUF Models
+- Quantized Mobile Models
+
+---
+
+🛠 Technology Stack
+
+Layer| Technology
+Language| Python
+CLI| Click / Typer
+UI| Rich
+PDF Engine| PyMuPDF
+OCR| Tesseract
+AI| Ollama
+Database| SQLite
+Export| Markdown, JSON, TXT, HTML
+Platform| Android (Termux), Linux
+
+---
+
+📦 Installation
+
 curl -fsSL https://raw.githubusercontent.com/SHalimoosavi/SYJ-SCHOLAR-AI/main/install.sh | bash
-```
 
-After installation, just type:
+Launch:
 
-```bash
 scholar
-```
-
-You'll see a beautiful interactive dashboard.
 
 ---
 
-## 📱 Termux Setup (Step by Step)
+👨‍💻 Developer
 
-```bash
-# 1. Install Termux from F-Droid (NOT Google Play)
-#    https://f-droid.org/packages/com.termux/
+Syed Ali Hasan Moosavi
 
-# 2. Update packages
-pkg update && pkg upgrade -y
+Founder & Managing Director
 
-# 3. Install Scholar AI
-curl -fsSL https://raw.githubusercontent.com/SHalimoosavi/SYJ-SCHOLAR-AI/main/install.sh | bash
+- SAYANJALI NEXUS PRIVATE LIMITED
+- SYJ Token Ecosystem
+- Open Source Developer
+- AI Research Enthusiast
+- Termux Community Builder
 
-# 4. Install Ollama (AI engine)
-pkg install ollama
+GitHub:
 
-# 5. Start Ollama and pull a model (choose based on your RAM)
-ollama serve &
-ollama pull gemma:2b      # recommended: fast, 2GB RAM
-# ollama pull phi:mini    # lighter: 1.3GB RAM
-# ollama pull tinyllama   # minimal: 0.6GB RAM
-
-# 6. Launch!
-scholar
-```
+https://github.com/SHalimoosavi
 
 ---
 
-## 🖥️ Desktop / Linux Install
+🌟 Open Source Projects
 
-```bash
-# Install dependencies
-sudo apt install python3 python3-pip tesseract-ocr git
+Featured Projects
 
-# Install Ollama
-curl -fsSL https://ollama.com/install.sh | sh
-ollama pull gemma:2b
+SYJ Scholar AI
 
-# Install Scholar AI
-curl -fsSL https://raw.githubusercontent.com/SHalimoosavi/SYJ-SCHOLAR-AI/main/install.sh | bash
-```
+Offline AI Study Assistant
+
+Repository:
+https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI
 
 ---
 
-## 🎓 Core Commands
+SYJ Token
 
-### Interactive Dashboard
-```bash
-scholar
-```
+Blockchain and Digital Asset Ecosystem
 
-### Direct CLI Commands
-
-```bash
-# Full study package (all-in-one)
-scholar study       lecture.pdf
-
-# PDF Summary
-scholar summarize   lecture.pdf
-
-# Structured Notes
-scholar notes       lecture.pdf
-
-# Flashcards
-scholar flashcards  lecture.pdf
-
-# Quiz (MCQ + True/False + Short + Long)
-scholar quiz        lecture.pdf
-
-# Exam Preparation
-scholar exam        lecture.pdf
-```
-
-### Options
-
-```bash
-# Change export format
-scholar summarize lecture.pdf --format json
-scholar notes     lecture.pdf --format html
-scholar quiz      lecture.pdf --format txt
-
-# Set output directory
-scholar flashcards lecture.pdf --output ~/Desktop/
-
-# Skip cache (regenerate)
-scholar summarize  lecture.pdf --no-cache
-
-# Check for updates
-scholar update
-
-# View recent sessions
-scholar history --limit 20
-
-# Settings
-scholar settings --show
-scholar settings --model phi:mini
-scholar settings --format markdown
-```
+Repository:
+(Add Repository URL)
 
 ---
 
-## 📤 Output Formats
+SAYANJALI NEXUS
 
-| Format   | Extension | Best For |
-|----------|-----------|----------|
-| Markdown | `.md`     | GitHub, Obsidian, Notion |
-| HTML     | `.html`   | Browser viewing, printing |
-| JSON     | `.json`   | Integration, further processing |
-| TXT      | `.txt`    | Plain text, any editor |
+Innovation and Technology Platform
 
-All exports go to `~/SYJScholarAI-output/<action>/` by default.
+Repository:
+(Add Repository URL)
 
 ---
 
-## 🤖 AI Models
+Other Open Source Projects
 
-Scholar AI uses **only free and open-source models** via Ollama:
+Add your repositories here:
 
-| Model | RAM | Speed | Quality | Command |
-|-------|-----|-------|---------|---------|
-| `gemma:2b` | 2 GB | Fast | ⭐⭐⭐ | `ollama pull gemma:2b` |
-| `phi:mini` | 1.3 GB | Very Fast | ⭐⭐⭐ | `ollama pull phi:mini` |
-| `tinyllama` | 0.6 GB | Fastest | ⭐⭐ | `ollama pull tinyllama` |
-| `qwen:1.8b` | 1 GB | Fast | ⭐⭐⭐ | `ollama pull qwen:1.8b` |
-| `phi3:mini` | 2.3 GB | Medium | ⭐⭐⭐⭐ | `ollama pull phi3:mini` |
-| `mistral:7b` | 4 GB | Slower | ⭐⭐⭐⭐⭐ | `ollama pull mistral:7b` |
-
-Switch models anytime:
-```bash
-scholar settings --model phi3:mini
-```
-
-**HuggingFace Fallback** — if Ollama is not available, Scholar AI automatically falls back to HuggingFace Transformers using `Qwen/Qwen1.5-0.5B-Chat` or `microsoft/phi-2`.
+- Project Name 1
+- Project Name 2
+- Project Name 3
+- Project Name 4
+- Project Name 5
 
 ---
 
-## 📁 Project Structure
+🤝 Contributing
 
-```
-SYJ-SCHOLAR-AI/
-│
-├── scholar/                    # Main Python package
-│   ├── __init__.py
-│   ├── core/
-│   │   ├── cli.py             # Typer CLI commands
-│   │   ├── config.py          # App configuration (Pydantic)
-│   │   ├── database.py        # SQLite session & cache store
-│   │   ├── plugins.py         # Plugin loader
-│   │   └── updater.py         # Self-update via GitHub
-│   │
-│   ├── ai/
-│   │   ├── engine.py          # Central AI orchestrator
-│   │   ├── ollama_provider.py # Ollama REST integration
-│   │   ├── hf_provider.py     # HuggingFace fallback
-│   │   └── prompts.py         # All prompt templates
-│   │
-│   ├── pdf/
-│   │   └── reader.py          # PyMuPDF → pdfplumber → OCR pipeline
-│   │
-│   ├── exports/
-│   │   └── exporter.py        # MD / TXT / JSON / HTML export
-│   │
-│   ├── ui/
-│   │   ├── dashboard.py       # Interactive Rich terminal dashboard
-│   │   ├── renderer.py        # Per-action result rendering
-│   │   ├── progress.py        # Spinner/progress context manager
-│   │   └── theme.py           # Rich colour theme
-│   │
-│   ├── flashcards/            # Flashcard utilities + Anki export
-│   ├── notes/                 # Note formatting helpers
-│   ├── quiz/                  # Quiz scoring utilities
-│   ├── exam/                  # Exam prep helpers
-│   └── utils/
-│       ├── helpers.py         # Text processing utilities
-│       ├── logger.py          # Loguru configuration
-│       └── paths.py           # XDG-compatible path helpers
-│
-├── tests/                     # pytest test suite
-│   ├── test_helpers.py
-│   ├── test_database.py
-│   └── test_prompts.py
-│
-├── plugins/
-│   └── example_plugin/
-│       └── plugin.py          # Plugin template
-│
-├── docs/                      # Extended documentation
-├── main.py                    # CLI entry point
-├── install.sh                 # One-line installer
-├── requirements.txt
-├── setup.py
-├── LICENSE                    # MIT
-└── README.md
-```
+Contributions are welcome.
+
+1. Fork Repository
+2. Create Feature Branch
+3. Commit Changes
+4. Submit Pull Request
 
 ---
 
-## 🧩 Plugin System
+📜 License
 
-Extend Scholar AI with community plugins:
+MIT License
 
-```python
-# ~/.local/share/SYJScholarAI/plugins/my_plugin/plugin.py
+Copyright (c) 2026
 
-import typer
-from rich.console import Console
-
-PLUGIN_NAME = "my-plugin"
-
-def register(app: typer.Typer) -> None:
-    @app.command("my-command", help="My custom Scholar AI command")
-    def my_cmd(pdf: Path = typer.Argument(...)):
-        ...
-```
-
-Plugins are auto-discovered on startup. Drop a folder in
-`~/.local/share/SYJScholarAI/plugins/` and restart `scholar`.
+Syed Ali Hasan Moosavi
 
 ---
 
-## 🛠️ Development
+⭐ Support The Project
 
-```bash
-# Clone
-git clone https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI.git
-cd SYJ-SCHOLAR-AI
+If you find this project useful:
 
-# Create venv
-python3 -m venv .venv && source .venv/bin/activate
+- Star the repository
+- Share it with students
+- Contribute improvements
+- Report issues
 
-# Install in dev mode
-pip install -e ".[dev]"
-
-# Run tests
-pytest tests/ -v
-
-# Lint
-ruff check scholar/
-
-# Format
-black scholar/
-```
-
----
-
-## 🗺️ Roadmap
-
-- [ ] v1.1 — Anki `.apkg` export for flashcards
-- [ ] v1.2 — Interactive quiz mode (test yourself in terminal)
-- [ ] v1.3 — Multi-PDF study sessions
-- [ ] v1.4 — Arabic / Urdu / Persian language support
-- [ ] v1.5 — Voice output via eSpeak (Termux)
-- [ ] v2.0 — Web UI via FastAPI (local server)
-
----
-
-## 🤝 Contributing
-
-Contributions are warmly welcome!
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Commit your changes: `git commit -m 'feat: add my feature'`
-4. Push and open a Pull Request
-
-Please read [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
-
----
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
-Free forever. Open forever. Study hard! 🎓
-
----
-
-<div align="center">
-
-Made with ❤️ for students everywhere
-
-**[⭐ Star on GitHub](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI/)** · **[🐛 Report Bug](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI/issues)** · **[💡 Request Feature](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI/issues)**
-
-</div>
+Together we can make quality education more accessible through open-source AI.
