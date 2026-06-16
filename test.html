@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYJ Scholar AI — Summarize — sample</title>
+  <style>
+    /* ── Base ──────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0d1117;
+      --bg2:       #161b22;
+      --bg3:       #21262d;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --text-dim:  #8b949e;
+      --blue:      #58a6ff;
+      --cyan:      #79c0ff;
+      --green:     #3fb950;
+      --yellow:    #d29922;
+      --red:       #f85149;
+      --purple:    #bc8cff;
+      --orange:    #d2a8ff;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      background: var(--bg3);
+      padding: .15em .4em;
+      border-radius: 4px;
+      font-size: .9em;
+    }
+    pre {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    pre code { background: none; padding: 0; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+    /* ── Layout ─────────────────────────────────────────────────────── */
+    .page { max-width: 860px; margin: 0 auto; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .header-logo { font-size: 1.6rem; }
+    .header h1  { font-size: 1.3rem; color: var(--cyan); }
+    .header .meta { font-size: .8rem; color: var(--text-dim); margin-top: .2rem; }
+    .badge {
+      display: inline-block;
+      padding: .2em .7em;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: 600;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      margin-left: .5rem;
+    }
+
+    /* ── Sections ───────────────────────────────────────────────────── */
+    h2 {
+      color: var(--blue);
+      font-size: 1.15rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: .4rem;
+      margin: 1.5rem 0 .75rem;
+    }
+    h3 { color: var(--cyan); font-size: 1rem; margin: 1rem 0 .4rem; }
+
+    /* ── Cards ──────────────────────────────────────────────────────── */
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: .75rem;
+    }
+    .card.high   { border-left: 4px solid var(--red);    }
+    .card.medium { border-left: 4px solid var(--yellow);  }
+    .card.low    { border-left: 4px solid var(--green);   }
+    .card.easy   { border-left: 4px solid var(--green);   }
+    .card.hard   { border-left: 4px solid var(--red);     }
+
+    /* ── Lists ───────────────────────────────────────────────────────── */
+    ul, ol { padding-left: 1.5rem; }
+    li { margin: .3rem 0; }
+
+    /* ── Definition table ────────────────────────────────────────────── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: .75rem 0;
+      font-size: .9rem;
+    }
+    th {
+      background: var(--bg3);
+      color: var(--cyan);
+      padding: .5rem .75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: .5rem .75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* ── Checklist ───────────────────────────────────────────────────── */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-box {
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .check-box.done {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    /* ── Pill tags ───────────────────────────────────────────────────── */
+    .tag {
+      display: inline-block;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: .1em .5em;
+      font-size: .75rem;
+      color: var(--text-dim);
+      margin: .1rem;
+    }
+
+    /* ── Answer reveal ───────────────────────────────────────────────── */
+    .answer {
+      background: var(--bg3);
+      border-left: 3px solid var(--green);
+      padding: .5rem .75rem;
+      margin-top: .5rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .answer-label { font-size: .75rem; color: var(--green); font-weight: 600; }
+    .correct-marker { color: var(--green); font-weight: 700; }
+
+    /* ── Priority badge ─────────────────────────────────────────────── */
+    .pri-high   { color: var(--red);    font-weight: 700; }
+    .pri-medium { color: var(--yellow); font-weight: 700; }
+    .pri-low    { color: var(--green);  font-weight: 700; }
+
+    /* ── Footer ─────────────────────────────────────────────────────── */
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    /* ── Print ───────────────────────────────────────────────────────── */
+    @media print {
+      body { background: white; color: black; }
+      .card { border: 1px solid #ccc; }
+      .header { border-color: #ccc; }
+      a { color: #0066cc; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">🎓</div>
+    <div>
+      <h1>SYJ Scholar AI
+        <span class="badge">Summarize</span>
+      </h1>
+      <div class="meta">
+        📄 sample &nbsp;|&nbsp; 🕐 2026-06-16 06:39
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic content injected by the Python exporter -->
+  <h2>Photosynthesis</h2>
+<h3>Summary</h3>
+<p>Plants convert sunlight into energy.</p>
+<h3>Key Points</h3>
+<ul><li>Uses sunlight</li><li>Uses water</li><li>Produces oxygen</li></ul>
+
+
+  <!-- Footer -->
+  <div class="footer">
+    Generated by
+    <a href="https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI/">SYJ Scholar AI</a>
+    — Your Offline AI Study Companion &nbsp;|&nbsp; MIT License
+  </div>
+
+</div>
+</body>
+</html>

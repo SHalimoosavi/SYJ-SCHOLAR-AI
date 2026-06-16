@@ -1,0 +1,61 @@
+/*
+ * SYJ Scholar AI — scholar/ui/assets/style.css
+ * Used by the HTML export template (report.html).
+ * Serves as the canonical design token reference.
+ *
+ * Embedded inline in the <style> block of report.html to keep
+ * exports fully self-contained (no network dependency).
+ */
+
+:root {
+  /* Colour palette — dark GitHub-inspired */
+  --bg:        #0d1117;
+  --bg2:       #161b22;
+  --bg3:       #21262d;
+  --border:    #30363d;
+  --text:      #c9d1d9;
+  --text-dim:  #8b949e;
+
+  /* Brand colours */
+  --blue:      #58a6ff;
+  --cyan:      #79c0ff;
+  --green:     #3fb950;
+  --yellow:    #d29922;
+  --red:       #f85149;
+  --purple:    #bc8cff;
+  --orange:    #d2a8ff;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Spacing */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* Priority colours */
+.pri-high   { color: var(--red);    }
+.pri-medium { color: var(--yellow); }
+.pri-low    { color: var(--green);  }
+
+/* Difficulty border */
+.card.easy   { border-left: 4px solid var(--green);  }
+.card.medium { border-left: 4px solid var(--yellow); }
+.card.hard   { border-left: 4px solid var(--red);    }
+
+/* Responsive */
+@media (max-width: 600px) {
+  body    { padding: 1rem 0.5rem; }
+  table   { font-size: 0.8rem; }
+  .page   { max-width: 100%; }
+}

@@ -1,0 +1,135 @@
+# ─────────────────────────────────────────────
+# SYJ Scholar AI — .gitignore
+# ─────────────────────────────────────────────
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.installed.cfg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+junit.xml
+test-results/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pyre/
+
+# Linters
+.ruff_cache/
+
+# IDE / editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Scholar AI runtime data (local only, never commit)
+SYJScholarAI-output/
+~/.local/share/SYJScholarAI/
+
+# SQLite database
+*.db
+*.db-shm
+*.db-wal
+
+# Log files
+*.log
+logs/
+
+# Secrets / credentials
+.env.local
+secrets.json
+api_key.txt
+
+# HuggingFace cache (large models)
+.cache/huggingface/
+
+# Ollama models (managed by Ollama separately)
+*.gguf
+*.bin
+
+# Compiled documentation
+docs/_build/
+docs/site/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribution / packaging
+.Python
+develop-eggs/
+lib/
+lib64/
+*.manifest
+*.spec
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Termux specific
+$PREFIX/
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
