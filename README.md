@@ -9,7 +9,7 @@
  ╚══════╝   ╚═╝    ╚════╝     ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
 ```
 
-### Your Offline AI Study Companion — Built for Android · Powered by Open-Source LLMs
+### Your Offline AI Study Companion — Built for Android. Owned by No One but You.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://python.org)
@@ -18,113 +18,109 @@
 [![GitHub Stars](https://img.shields.io/github/stars/SHalimoosavi/SYJ-SCHOLAR-AI?style=social)](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI)
 [![Author](https://img.shields.io/badge/author-Syed%20Ali%20Hasan%20Moosavi-blueviolet)](https://github.com/SHalimoosavi)
 
-*Free · Open-Source · Offline · Mobile-First*
+*Free. Open-Source. Offline. Built for the phone in your pocket, not the laptop you don't own.*
 
 </div>
 
 ---
 
-## 🎯 What is SYJ Scholar AI?
+## Why I Built This
 
-**SYJ Scholar AI** transforms any PDF into a complete study package — summaries, notes, flashcards, quizzes, and exam prep — all powered by **free, open-source AI** running entirely on your Android phone through **Termux**.
+I've spent enough years writing software to know that most "AI study tools" are solving a problem rich students never had. A subscription here, a cloud API key there, a Wi-Fi requirement baked in by people who never once asked what happens when a student has none of those things.
 
-> No subscriptions. No internet required after setup. No data leaves your device. Ever.
+**SYJ Scholar AI** doesn't make that assumption. Hand it a PDF, and it gives you back summaries, structured notes, flashcards, and full quizzes — generated entirely on-device, with an open-source model running inside Termux on an Android phone. No subscription. No cloud round-trip. No data leaving the device, because there's nowhere for it to go.
 
-Built by a developer who codes from an Android phone, for every student who can't afford a laptop or a cloud AI plan.
-
----
-
-## 😩 The Problem It Solves
-
-| Challenge | How Scholar AI Fixes It |
-|-----------|--------------------------|
-| Too many PDFs, no time | Instant summaries & key concept extraction |
-| Expensive AI subscriptions | 100% free & open-source forever |
-| Poor internet connectivity | Fully offline after one-time model download |
-| Juggling multiple apps | One CLI tool covers notes, cards, quizzes |
-| Mobile students without laptops | Built natively for Android + Termux |
-| Exam prep is stressful | AI generates likely questions & checklists |
+If you've used "premium" study apps that gatekeep flashcards behind a paywall, you'll understand why this exists.
 
 ---
 
-## ⚡ Quick Start
+## The Problem, Plainly Stated
 
-### One-Line Install (Termux & Linux)
+| What students actually face | What Scholar AI does about it |
+|---|---|
+| A pile of PDFs and not enough hours | Instant chapter-level or full-document summaries |
+| AI subscriptions that don't fit a student budget | Free, open-source, forever — no tier, no upsell |
+| Unreliable or no internet at exam time | Fully offline after a one-time model download |
+| Five different apps for notes, cards, and quizzes | One CLI, one workflow, zero app-switching |
+| No laptop, only a phone | Native Termux/Android-first design, not a port |
+| Exam anxiety from not knowing what's coming | AI-generated likely questions and revision checklists |
+
+---
+
+## Get Running in Under Two Minutes
+
+### One-Line Install — Termux & Linux
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/SHalimoosavi/SYJ-SCHOLAR-AI/main/install.sh | bash
 ```
 
-Then launch with:
+Then:
 
 ```bash
 scholar
 ```
 
-You'll see an interactive dashboard with all options ready.
+That's the whole onboarding. No account creation, no email, no "verify your card to start your free trial."
 
 ---
 
-## 📱 Termux Setup (Step by Step)
+## Termux Setup — Step by Step
 
 ```bash
-# Step 1 — Install Termux from F-Droid (NOT Google Play)
-#   https://f-droid.org/packages/com.termux/
+# 1 — Install Termux from F-Droid (not the outdated Play Store build)
+#     https://f-droid.org/packages/com.termux/
 
-# Step 2 — Update packages
+# 2 — Update packages
 pkg update && pkg upgrade -y
 
-# Step 3 — Install Scholar AI
+# 3 — Install Scholar AI
 curl -fsSL https://raw.githubusercontent.com/SHalimoosavi/SYJ-SCHOLAR-AI/main/install.sh | bash
 
-# Step 4 — Install Ollama (AI engine)
+# 4 — Install Ollama, the local AI engine
 pkg install ollama
 
-# Step 5 — Start Ollama and pull a model (choose based on your device RAM)
+# 5 — Start Ollama and pull a model sized to your device
 ollama serve &
-ollama pull gemma:2b      # Recommended: fast, ~2GB RAM
-# ollama pull phi:mini    # Lighter: ~1.3GB RAM
-# ollama pull tinyllama   # Minimal: ~0.6GB RAM
+ollama pull gemma:2b      # Recommended — fast, ~2GB RAM
+# ollama pull phi:mini    # Lighter — ~1.3GB RAM
+# ollama pull tinyllama   # Minimal — ~0.6GB RAM
 
-# Step 6 — Launch!
+# 6 — Launch
 scholar
 ```
 
 ---
 
-## 🖥️ Desktop / Linux Install
+## Desktop / Linux Install
 
 ```bash
-# Install system dependencies
 sudo apt install python3 python3-pip tesseract-ocr git
 
-# Clone the repo
 git clone https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI.git
 cd SYJ-SCHOLAR-AI
 
-# Install Python dependencies
 pip install -r requirements.txt
 
-# Launch
 python scholar.py
 ```
 
 ---
 
-## 🧠 Features
+## What's Inside
 
-- 📄 **PDF Ingestion** — Feed any PDF; Scholar AI handles text extraction + OCR
-- 📝 **Smart Summaries** — Bullet-point summaries by chapter or full document
-- 🃏 **Flashcard Generator** — Auto-generates Q&A cards from key concepts
-- 📋 **Quiz Mode** — Interactive MCQ & short-answer quizzes with scoring
-- 🗒️ **Study Notes** — Structured notes with headings, definitions, and examples
-- 🎯 **Exam Prep** — Likely exam questions, checklists, and revision tips
-- 🔒 **100% Offline** — All processing on-device after initial model pull
-- 📱 **Mobile-First CLI** — Designed for Termux keyboard navigation on small screens
+- **PDF Ingestion** — feed it any PDF; text extraction and OCR are handled automatically
+- **Smart Summaries** — clean, bullet-point summaries by chapter or full document
+- **Flashcard Generator** — auto-built Q&A cards pulled from the document's key concepts
+- **Quiz Mode** — interactive MCQ and short-answer testing with live scoring
+- **Study Notes** — structured notes with headings, definitions, and worked examples
+- **Exam Prep** — likely questions, revision checklists, and last-mile prep guidance
+- **100% Offline** — every byte of processing happens on-device after the initial model pull
+- **Mobile-First CLI** — built and tuned for a Termux keyboard on a small screen, not adapted to it after the fact
 
 ---
 
-## 📁 Project Structure
+## Under the Hood
 
 ```
 SYJ-SCHOLAR-AI/
@@ -142,21 +138,25 @@ SYJ-SCHOLAR-AI/
 └── README.md
 ```
 
+No magic, no hidden binaries phoning home. Read the code — that's the entire point of open source.
+
 ---
 
-## 🤖 Supported Models
+## Pick a Model for Your Hardware
 
 | Model | RAM Needed | Speed | Best For |
-|-------|-----------|-------|----------|
+|---|---|---|---|
 | `gemma:2b` | ~2 GB | ⚡⚡⚡ | Recommended default |
 | `phi:mini` | ~1.3 GB | ⚡⚡⚡⚡ | Lightweight devices |
-| `tinyllama` | ~0.6 GB | ⚡⚡⚡⚡⚡ | Very low RAM |
-| `llama3:8b` | ~5 GB | ⚡⚡ | High-quality output |
+| `tinyllama` | ~0.6 GB | ⚡⚡⚡⚡⚡ | Very low-RAM phones |
+| `llama3:8b` | ~5 GB | ⚡⚡ | Higher-quality output |
 | `mistral:7b` | ~4.5 GB | ⚡⚡ | Best reasoning |
+
+If you're not sure, start with `gemma:2b`. It's the sane default for a reason.
 
 ---
 
-## 🛣️ Roadmap
+## Where This Is Headed
 
 - [x] PDF text extraction + OCR
 - [x] AI-powered summaries
@@ -170,28 +170,27 @@ SYJ-SCHOLAR-AI/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome — especially from Termux and mobile-first developers.
+I welcome contributions, particularly from people who build mobile-first and understand what "offline-first" actually costs in engineering effort.
 
 ```bash
-# Fork → Clone → Branch → PR
 git checkout -b feature/your-feature-name
 git commit -m "feat: describe your change"
 git push origin feature/your-feature-name
 ```
 
-Please open an issue first for large changes so we can discuss the direction.
+Open an issue before a large PR — let's agree on direction before either of us spends a weekend on it.
 
 ---
 
-## 👨‍💻 Author & Developer
+## Author & Developer
 
 <div align="center">
 
 **Syed Ali Hasan Moosavi**
-*Founder & Managing Director — SAYANJALI NEXUS PRIVATE LIMITED*
-*Automation Engineer · Open-Source Developer · Termux Power User*
+Founder & Managing Director — Sayanjali Nexus Private Limited
+Automation Engineer · Open-Source Developer · Termux Power User
 
 [![GitHub](https://img.shields.io/badge/GitHub-SHalimoosavi-181717?logo=github)](https://github.com/SHalimoosavi)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://www.linkedin.com/in/syed-ali-hasan-moosavi-237734378/)
@@ -199,73 +198,49 @@ Please open an issue first for large changes so we can discuss the direction.
 [![Portfolio](https://img.shields.io/badge/Portfolio-moosavi-orange)](https://shalimoosavi.github.io/moosavi/)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Message-25D366?logo=whatsapp)](https://wa.me/918008123605)
 
-> *"I build everything from an Android phone in Termux. If it runs on constrained hardware, it runs anywhere."*
+> *I build everything from an Android phone in Termux. If software runs cleanly on constrained hardware, it'll run anywhere — that's not a limitation, it's a stress test I choose to run on myself.*
 
 </div>
 
 ---
 
-## 🚀 Other Open-Source Projects by the Author
+## More From This Workshop
 
-> All projects are designed with a **Termux-first** philosophy — mobile, offline-capable, zero-cost infrastructure.
+Every project below shares the same philosophy: **Termux-first, mobile-capable, zero-cost infrastructure.** I don't build things that need a data center to prove a point.
 
----
-
-### 🔍 [SAYANJALI OSINT](https://github.com/SHalimoosavi/sayanjali-osint)
+### [SAYANJALI OSINT](https://github.com/SHalimoosavi/sayanjali-osint)
 **Geolocation Intelligence Framework for Android**
-
-A lightweight yet powerful OSINT geolocation framework designed specifically for Termux environments. Built for security researchers, bug bounty hunters, and CTF players who work from mobile devices.
-
+A lightweight OSINT geolocation framework built specifically for Termux — for security researchers, bug bounty hunters, and CTF players who work from a phone, not a rack.
 `Python` · `OSINT` · `Geolocation` · `Termux` · `Security Research`
 
----
-
-### 🛠️ [SYJ ONE](https://github.com/SHalimoosavi/syj-one)
+### [SYJ ONE](https://github.com/SHalimoosavi/syj-one)
 **All-in-One Termux Productivity Platform**
-
-An open-source, all-in-one productivity · business · developer · SEO · security platform built specifically for Termux on Android. Replaces a dozen separate tools with one unified CLI experience covering automation, SEO analysis, security scanning, and developer utilities.
-
+A unified CLI replacing a dozen separate tools — automation, SEO analysis, security scanning, and developer utilities, all in one place on Android.
 `Python` · `CLI` · `Productivity` · `SEO` · `Security` · `Automation`
 
----
-
-### 📱 [termux-pro](https://github.com/SHalimoosavi/termux-pro)
+### [termux-pro](https://github.com/SHalimoosavi/termux-pro)
 **TERMUX ZERO → PRO Guide**
-
-Comprehensive HTML guide and toolkit for transforming a bare Termux install into a full Android Dev + Ethical Hacking + AI Lab environment. The definitive reference for mobile developers.
-
+The reference guide for turning a bare Termux install into a full Android Dev + Ethical Hacking + AI Lab. Written for people who learn by doing, not by watching a 4-hour video.
 `HTML` · `Termux` · `Android` · `DevGuide` · `AI` · `Hacking`
 
----
-
-### 🤖 [podcaster_crew](https://github.com/SHalimoosavi/podcaster_crew)
+### [podcaster_crew](https://github.com/SHalimoosavi/podcaster_crew)
 **Multi-Agent AI Podcast System**
-
-A multi-agent AI system template powered by crewAI, enabling collaborative AI agents to plan, research, and produce podcast-style content autonomously. Built for N8N and API-driven automation pipelines.
-
+A crewAI-powered multi-agent template where AI agents plan, research, and produce podcast-style content autonomously — built for N8N and API-driven pipelines.
 `Python` · `crewAI` · `Multi-Agent` · `AI Automation` · `Podcast`
 
----
-
-### 🌐 [moosavi (Portfolio)](https://github.com/SHalimoosavi/moosavi)
+### [moosavi (Portfolio)](https://github.com/SHalimoosavi/moosavi)
 **Personal Developer Portfolio & Authority Site**
-
-Professional portfolio site for Syed Ali Hasan Moosavi — automation engineer, open-source developer, and founder of SAYANJALI NEXUS. Covers N8N pipelines, API systems, GitHub Actions, AI agents, and Web3 operations.
-
+The professional home base — covering N8N pipelines, API systems, GitHub Actions, AI agents, and Web3 operations.
 `HTML` · `Portfolio` · `GitHub Pages` · `Web3` · `Automation`
 
----
-
-### 🧩 [antigravity-awesome-skills](https://github.com/SHalimoosavi/antigravity-awesome-skills)
+### [antigravity-awesome-skills](https://github.com/SHalimoosavi/antigravity-awesome-skills)
 **Agentic Skills Library for Claude Code, Cursor & More**
-
-A curated installable library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding environments. Includes an installer CLI, bundles, workflows, and community-contributed skill collections.
-
+A curated, installable library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, and Antigravity — complete with installer CLI, bundles, and workflows.
 `Python` · `Claude Code` · `Cursor` · `AI Skills` · `Agentic` · `Open Source`
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <div align="center">
 
@@ -276,19 +251,19 @@ A curated installable library of 1,400+ agentic skills for Claude Code, Cursor, 
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for full details.
+MIT License — see [LICENSE](LICENSE).
 
-Free to use, modify, and distribute. Attribution appreciated but not required.
+Free to use, modify, and distribute. Attribution appreciated. Never required. That's not generosity, that's just what open source means.
 
 ---
 
 <div align="center">
 
-**Built with ❤️ from an Android phone · Hyderabad, India**
+**Built with discipline, from an Android phone, in Hyderabad, India.**
 
-*SAYANJALI NEXUS PRIVATE LIMITED © 2025*
+*Sayanjali Nexus Private Limited © 2026*
 
 [⭐ Star this repo](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI) · [🐛 Report a Bug](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI/issues) · [💡 Request a Feature](https://github.com/SHalimoosavi/SYJ-SCHOLAR-AI/issues/new)
 
